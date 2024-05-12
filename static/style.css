@@ -1,0 +1,15 @@
+.container {
+    padding: 10px 10px;
+}
+.container-fluid {
+    background-color: antiquewhite;
+    height: 50px;
+    padding-top: 10px;
+    margin: 10px;
+}
+
+img {
+    height: 800px;
+    width: auto;
+    padding: 10px;
+}
