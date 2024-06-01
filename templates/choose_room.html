@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 
 {% block app_content %}
-    <div class="container-fluid">Room number is {{ room_number }}
-    </div>
+
+<form action="" method = "post">
+    <p>
+        <label for="message">Input room number</label>
+        <input type="text" id="message" name ='message'>
+    </p>
+    <p>
+        <input type="submit">
+    </p>
+</form>
+<p>Room number is {{ room_number }}</p>
 
 {% endblock %}

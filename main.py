@@ -6,6 +6,15 @@ app = Flask(__name__)
 def index():
     return render_template('index.html')
 
+@app.route('/room', methods = ['get', 'post'])  #выбор комнаты
+@app.route('/room/<int:room_number>', methods = ['get', 'post'])
+def choose_room():
+    room_number = 'start'
+    if request.method =='POST':
+        room_number=request.form.get('message')
+    return render_template('choose_room.html', room_number = room_number)
+
+
 @app.route('/plan', methods = ['get', 'post']) #navbar  план замка
 def plan():
     return render_template('plan.html')
@@ -18,10 +27,6 @@ def gold():
 def skelet():
     return render_template('skelet.html')
 
-@app.route('/room', methods = ['get', 'post'])  #выбор комнаты
-@app.route('/room/<int:room_number>', methods = ['get', 'post'])
-def choose_room(room_number=0):
-    return render_template('choose_room.html', room_number = room_number)
 
 
 if __name__=='__main__':
